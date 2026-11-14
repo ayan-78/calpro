@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-5305765007887137">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CalcPro offers free, easy-to-use EMI, GST, SIP, age, percentage and discount calculators. Get clear results instantly.">
+  <meta name="keywords" content="online calculator, EMI calculator, GST calculator, SIP calculator, age calculator, percentage calculator, discount calculator">
+  <meta name="theme-color" content="#155eef">
+  <meta property="og:title" content="CalcPro — Smart Calculators for Everyday Decisions">
+  <meta property="og:description" content="Free online calculators for loans, GST, investments, age, percentages and discounts.">
+  <meta property="og:type" content="website">
+  <title>CalcPro — Free Online Calculators</title>
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- AdSense: after your site is added to AdSense, replace the placeholder publisher ID
+       with the exact code supplied in your AdSense account. Do not use a sample ID. -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="CalcPro home"><span class="brand-mark">C</span><span>Calc<span class="brand-accent">Pro</span></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#calculators">Calculators</a>
+        <a href="about.html">About</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> SIMPLE TOOLS. SMARTER DECISIONS.</div>
+          <h1>Numbers made <span class="gradient-text">simple.</span></h1>
+          <p class="hero-copy">Make confident everyday decisions with free, easy-to-use calculators. Clear answers, no complicated spreadsheets.</p>
+          <a class="button button-primary" href="#calculators">Explore calculators <span aria-hidden="true">→</span></a>
+          <div class="hero-trust"><span>✓ Free to use</span><span>✓ Instant results</span><span>✓ Mobile friendly</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Calculator illustration">
+          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+          <div class="visual-card card-back"><span class="mini-label">YOUR NUMBERS</span><div class="fake-line long"></div><div class="fake-line"></div><div class="fake-line short"></div></div>
+          <div class="visual-card card-front"><div class="visual-card-top"><span class="visual-icon">∑</span><span class="live-pill">● READY</span></div><span class="mini-label">MONTHLY PAYMENT</span><strong>₹ 12,450</strong><div class="visual-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="visual-foot"><span>Plan with clarity</span><span>↗</span></div></div>
+          <div class="floating-badge">✦ Quick & accurate</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="calculators">
+      <div class="section-heading">
+        <div><div class="eyebrow">CALCPRO TOOLKIT</div><h2>What would you like to calculate?</h2><p>Choose a calculator and get your result in seconds.</p></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="toolSearch" type="search" placeholder="Search calculators..." aria-label="Search calculators"></label>
+      </div>
+
+      <div class="calculator-layout">
+        <aside class="tool-list" aria-label="Calculator list">
+          <button class="tool-link active" data-tool="emi"><span class="tool-icon blue">₹</span><span><b>EMI Calculator</b><small>Loan & monthly payments</small></span><span class="chevron">›</span></button>
+          <button class="tool-link" data-tool="gst"><span class="tool-icon green">%</span><span><b>GST Calculator</b><small>Tax inclusive or exclusive</small></span><span class="chevron">›</span></button>
+          <button class="tool-link" data-tool="sip"><span class="tool-icon purple">↗</span><span><b>SIP Calculator</b><small>Investment growth estimate</small></span><span class="chevron">›</span></button>
+          <button class="tool-link" data-tool="age"><span class="tool-icon orange">◷</span><span><b>Age Calculator</b><small>Exact age from birth date</small></span><span class="chevron">›</span></button>
+          <button class="tool-link" data-tool="percentage"><span class="tool-icon pink">％</span><span><b>Percentage Calculator</b><small>Find percentages & change</small></span><span class="chevron">›</span></button>
+          <button class="tool-link" data-tool="discount"><span class="tool-icon teal">%</span><span><b>Discount Calculator</b><small>Sale price & savings</small></span><span class="chevron">›</span></button>
+        </aside>
+
+        <section class="calculator-panel" aria-live="polite">
+          <div class="calc-panel-heading"><div><span class="panel-kicker" id="calcKicker">LOAN PLANNING</span><h3 id="calcTitle">EMI Calculator</h3><p id="calcDescription">Estimate your monthly loan repayment and total interest.</p></div><span class="panel-symbol" id="panelSymbol">₹</span></div>
+
+          <div class="calc-content" id="calc-emi">
+            <div class="input-grid">
+              <label class="field"><span>Loan amount (₹)</span><input id="emiPrincipal" type="number" min="1" value="1000000" step="1000"></label>
+              <label class="field"><span>Annual interest rate (%)</span><input id="emiRate" type="number" min="0" max="100" value="8.5" step="0.1"></label>
+              <label class="field"><span>Loan tenure (years)</span><input id="emiYears" type="number" min="0.1" max="50" value="10" step="0.5"></label>
+            </div>
+            <button class="button button-primary calculate-btn" id="emiCalculate">Calculate EMI</button>
+            <div class="result-box"><div class="result-main"><span>Monthly EMI</span><strong id="emiResult">₹ 12,398</strong></div><div class="result-stats"><div><small>Principal amount</small><b id="emiPrincipalOut">₹ 10,00,000</b></div><div><small>Total interest</small><b id="emiInterest">₹ 4,87,760</b></div><div><small>Total payment</small><b id="emiTotal">₹ 14,87,760</b></div></div></div>
+            <p class="result-note">Estimate only. Actual lender calculations may vary due to fees, rate changes and payment dates.</p>
+          </div>
+
+          <div class="calc-content hidden" id="calc-gst">
+            <div class="segmented"><button class="segment active" data-gst-mode="exclusive">Add GST</button><button class="segment" data-gst-mode="inclusive">Remove GST</button></div>
+            <div class="input-grid">
+              <label class="field"><span id="gstAmountLabel">Original amount (₹)</span><input id="gstAmount" type="number" min="0" value="1000"></label>
+              <label class="field"><span>GST rate (%)</span><select id="gstRate"><option>5</option><option>12</option><option selected>18</option><option>28</option><option value="custom">Custom</option></select></label>
+              <label class="field hidden" id="gstCustomWrap"><span>Custom GST rate (%)</span><input id="gstCustom" type="number" min="0" max="100" value="18"></label>
+            </div>
+            <button class="button button-primary calculate-btn" id="gstCalculate">Calculate GST</button>
+            <div class="result-box"><div class="result-main"><span id="gstMainLabel">Total amount including GST</span><strong id="gstTotal">₹ 1,180.00</strong></div><div class="result-stats"><div><small>Base amount</small><b id="gstBase">₹ 1,000.00</b></div><div><small>GST amount</small><b id="gstTax">₹ 180.00</b></div><div><small>GST rate</small><b id="gstRateOut">18%</b></div></div></div>
+            <p class="result-note">For estimation only. Confirm the applicable GST rate and tax treatment for your transaction.</p>
+          </div>
+
+          <div class="calc-content hidden" id="calc-sip">
+            <div class="input-grid">
+              <label class="field"><span>Monthly investment (₹)</span><input id="sipMonthly" type="number" min="1" value="5000" step="500"></label>
+              <label class="field"><span>Expected annual return (%)</span><input id="sipRate" type="number" min="0" max="100" value="12" step="0.5"></label>
+              <label class="field"><span>Investment period (years)</span><input id="sipYears" type="number" min="1" max="60" value="10"></label>
+            </div>
+            <button class="button button-primary calculate-btn" id="sipCalculate">Calculate returns</button>
+            <div class="result-box"><div class="result-main"><span>Estimated future value</span><strong id="sipFuture">₹ 11,50,193</strong></div><div class="result-stats"><div><small>Invested amount</small><b id="sipInvested">₹ 6,00,000</b></div><div><small>Estimated returns</small><b id="sipReturns">₹ 5,50,193</b></div><div><small>Investment period</small><b id="sipPeriod">10 years</b></div></div></div>
+            <p class="result-note">Illustrative estimate, not a guaranteed return. Market-linked investments can lose value.</p>
+          </div>
+
+          <div class="calc-content hidden" id="calc-age">
+            <div class="input-grid">
+              <label class="field"><span>Date of birth</span><input id="birthDate" type="date"></label>
+              <label class="field"><span>Calculate age on</span><input id="ageAsOf" type="date"></label>
+            </div>
+            <button class="button button-primary calculate-btn" id="ageCalculate">Calculate age</button>
+            <div class="result-box"><div class="result-main"><span>Your exact age</span><strong id="ageResult">—</strong></div><div class="result-stats"><div><small>Total months</small><b id="ageMonths">—</b></div><div><small>Total weeks</small><b id="ageWeeks">—</b></div><div><small>Total days</small><b id="ageDays">—</b></div></div></div>
+            <p class="result-note">Age is calculated using calendar dates. The result is based on the dates you enter.</p>
+          </div>
+
+          <div class="calc-content hidden" id="calc-percentage">
+            <div class="input-grid">
+              <label class="field"><span>What is X% of Y? — X (%)</span><input id="pctX" type="number" value="20"></label>
+              <label class="field"><span>Y (number)</span><input id="pctY" type="number" value="500"></label>
+              <label class="field"><span>Optional: part value</span><input id="pctPart" type="number" value="100"></label>
+              <label class="field"><span>Optional: total value</span><input id="pctWhole" type="number" value="500"></label>
+            </div>
+            <button class="button button-primary calculate-btn" id="pctCalculate">Calculate percentage</button>
+            <div class="result-box"><div class="result-main"><span id="pctMainLabel">20% of 500</span><strong id="pctResult">100</strong></div><div class="result-stats"><div><small>Part as % of total</small><b id="pctOfTotal">20%</b></div><div><small>Calculation</small><b id="pctFormula">20 ÷ 100 × 500</b></div></div></div>
+            <p class="result-note">Enter the first two values for X% of Y. The optional values calculate a part as a percentage of a total.</p>
+          </div>
+
+          <div class="calc-content hidden" id="calc-discount">
+            <div class="input-grid">
+              <label class="field"><span>Original price (₹)</span><input id="discountPrice" type="number" min="0" value="2500"></label>
+              <label class="field"><span>Discount (%)</span><input id="discountRate" type="number" min="0" max="100" value="20"></label>
+            </div>
+            <button class="button button-primary calculate-btn" id="discountCalculate">Calculate discount</button>
+            <div class="result-box"><div class="result-main"><span>Final sale price</span><strong id="discountFinal">₹ 2,000.00</strong></div><div class="result-stats"><div><small>You save</small><b id="discountSaving">₹ 500.00</b></div><div><small>Original price</small><b id="discountOriginal">₹ 2,500.00</b></div><div><small>Discount rate</small><b id="discountRateOut">20%</b></div></div></div>
+            <p class="result-note">The result does not include any additional taxes, shipping fees or store charges.</p>
+          </div>
+          <div class="result-actions" id="resultActions" aria-label="Result actions">
+            <button class="action-button" id="shareResult" type="button">↗ Share result</button>
+            <button class="action-button" id="downloadResult" type="button">↓ Download result</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="info-strip"><div class="container info-grid"><div><span class="info-icon">⚡</span><b>Fast calculations</b><p>Get useful estimates without complicated steps.</p></div><div><span class="info-icon">◎</span><b>Easy to understand</b><p>Clear inputs and results help you follow the numbers.</p></div><div><span class="info-icon">▣</span><b>Works on any screen</b><p>Use CalcPro on your phone, tablet or computer.</p></div></div></section>
+
+    <section class="container content-section">
+      <div class="eyebrow">WHY CALCPRO</div><h2>Clarity for everyday calculations</h2>
+      <p class="content-lead">From planning a loan to checking a sale price, CalcPro brings practical calculators together in one convenient place.</p>
+      <div class="content-cards"><article><h3>Understand your EMI</h3><p>Estimate a monthly loan payment using the principal, annual interest rate and repayment period. Review the estimated interest and total repayment before comparing loan options.</p></article><article><h3>Work out GST</h3><p>Calculate an estimated tax amount by adding GST to a base price or extracting GST from a tax-inclusive amount. Always confirm the correct rate for your product or service.</p></article><article><h3>Explore SIP scenarios</h3><p>See how regular monthly investments may grow over time under an assumed rate of return. Actual investment performance varies and is never guaranteed.</p></article></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark">C</span><span>Calc<span class="brand-accent">Pro</span></span></a><p>Simple tools for smarter everyday decisions.</p><nav><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></nav></div><div class="container footer-bottom"><span>© <span id="year"></span> CalcPro. All rights reserved.</span><span>Calculations are estimates for informational purposes.</span></div></footer>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
