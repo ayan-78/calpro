@@ -116,6 +116,14 @@
     button.addEventListener("click", () => selectTool(button.dataset.tool));
   });
 
+  // Allow dedicated SEO pages to open the matching calculator on the home page.
+  const requestedCalculator = new URLSearchParams(window.location.search).get("calculator");
+  if (requestedCalculator && descriptions[requestedCalculator]) {
+    selectTool(requestedCalculator);
+    const target = $("calculators");
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   if ($("toolSearch")) {
     $("toolSearch").addEventListener("input", (event) => {
       const query = event.target.value.toLowerCase().trim();
