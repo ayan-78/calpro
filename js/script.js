@@ -257,18 +257,26 @@
     if (!exists("pctX", "pctY", "pctPart", "pctWhole", "pctMainLabel", "pctResult", "pctOfTotal", "pctFormula")) return;
     const x = readNumber("pctX");
     const y = readNumber("pctY");
-    const part = readNumber("pctPart");
-    const whole = readNumber("pctWhole");
-    if (!isFiniteValues(x, y, part, whole) || whole === 0) {
-      showError("Enter valid numbers. The total value must not be zero.");
+    const partValue = $("pctPart").value.trim();
+    const wholeValue = $("pctWhole").value.trim();
+    const part = partValue === "" ? NaN : Number(partValue);
+    const whole = wholeValue === "" ? NaN : Number(wholeValue);
+    if (!isFiniteValues(x, y)) {
+      showError("Enter valid numbers for the percentage and value.");
       return;
     }
-    const result = x / 100 * y;
-    const ratio = part / whole * 100;
     $("pctMainLabel").textContent = `${x}% of ${y}`;
-    $("pctResult").textContent = Number(result.toFixed(6)).toLocaleString("en-IN");
-    $("pctOfTotal").textContent = `${Number(ratio.toFixed(4)).toLocaleString("en-IN")}%`;
+    $("pctResult").textContent = Number((x / 100 * y).toFixed(6)).toLocaleString("en-IN");
     $("pctFormula").textContent = `${x} ÷ 100 × ${y}`;
+    if (partValue === "" && wholeValue === "") {
+      $("pctOfTotal").textContent = "—";
+    } else if (partValue === "" || wholeValue === "" || !isFiniteValues(part, whole) || whole === 0) {
+      showError("For the optional part-as-a-percentage calculation, enter both a valid part and a non-zero total, or leave both fields blank.");
+      $("pctOfTotal").textContent = "—";
+    } else {
+      const ratio = part / whole * 100;
+      $("pctOfTotal").textContent = `${Number(ratio.toFixed(4)).toLocaleString("en-IN")}%`;
+    }
   }
   if ($("pctCalculate")) $("pctCalculate").addEventListener("click", calculatePercentage);
 
