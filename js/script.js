@@ -58,7 +58,7 @@
 
   // GA4 interaction tracking: record calculator names and actions only.
   // Do not send calculator input values, dates, or financial amounts to Analytics.
-  function trackPrime CalProEvent(eventName, calculatorName) {
+  function trackPrimeCalProEvent(eventName, calculatorName) {
     if (typeof window.gtag === "function") {
       window.gtag("event", eventName, { calculator_name: calculatorName });
     }
@@ -66,7 +66,7 @@
 
   document.querySelectorAll(".tool-link[data-tool]").forEach((button) => {
     button.addEventListener("click", () => {
-      trackPrime CalProEvent("calculator_selected", button.dataset.tool);
+      trackPrimeCalProEvent("calculator_selected", button.dataset.tool);
     });
   });
 
@@ -82,7 +82,7 @@
     const button = $(buttonId);
     if (button) {
       button.addEventListener("click", () => {
-        trackPrime CalProEvent("calculator_calculate_clicked", calculatorName);
+        trackPrimeCalProEvent("calculator_calculate_clicked", calculatorName);
       });
     }
   });
