@@ -56,6 +56,37 @@
   const isCalculatorPage = Boolean($("emiCalculate") && $("emiPrincipal") && $("calc-emi"));
   if (!isCalculatorPage) return;
 
+  // GA4 interaction tracking: record calculator names and actions only.
+  // Do not send calculator input values, dates, or financial amounts to Analytics.
+  function trackCalcProEvent(eventName, calculatorName) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", eventName, { calculator_name: calculatorName });
+    }
+  }
+
+  document.querySelectorAll(".tool-link[data-tool]").forEach((button) => {
+    button.addEventListener("click", () => {
+      trackCalcProEvent("calculator_selected", button.dataset.tool);
+    });
+  });
+
+  const calculateButtons = {
+    emiCalculate: "emi",
+    gstCalculate: "gst",
+    sipCalculate: "sip",
+    ageCalculate: "age",
+    pctCalculate: "percentage",
+    discountCalculate: "discount"
+  };
+  Object.entries(calculateButtons).forEach(([buttonId, calculatorName]) => {
+    const button = $(buttonId);
+    if (button) {
+      button.addEventListener("click", () => {
+        trackCalcProEvent("calculator_calculate_clicked", calculatorName);
+      });
+    }
+  });
+
   // Calculator navigation and search.
   const descriptions = {
     emi: ["LOAN PLANNING", "EMI Calculator", "Estimate your monthly loan repayment and total interest.", "₹"],
