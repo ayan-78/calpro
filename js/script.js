@@ -58,7 +58,7 @@
 
   // GA4 interaction tracking: record calculator names and actions only.
   // Do not send calculator input values, dates, or financial amounts to Analytics.
-  function trackCalcProEvent(eventName, calculatorName) {
+  function trackPrime CalcProEvent(eventName, calculatorName) {
     if (typeof window.gtag === "function") {
       window.gtag("event", eventName, { calculator_name: calculatorName });
     }
@@ -66,7 +66,7 @@
 
   document.querySelectorAll(".tool-link[data-tool]").forEach((button) => {
     button.addEventListener("click", () => {
-      trackCalcProEvent("calculator_selected", button.dataset.tool);
+      trackPrime CalcProEvent("calculator_selected", button.dataset.tool);
     });
   });
 
@@ -82,7 +82,7 @@
     const button = $(buttonId);
     if (button) {
       button.addEventListener("click", () => {
-        trackCalcProEvent("calculator_calculate_clicked", calculatorName);
+        trackPrime CalcProEvent("calculator_calculate_clicked", calculatorName);
       });
     }
   });
@@ -292,11 +292,11 @@
   // Share or download the currently visible calculator result.
   function activeToolName() {
     const active = document.querySelector(".tool-link.active");
-    return active ? active.querySelector("b").textContent : "CalcPro result";
+    return active ? active.querySelector("b").textContent : "Prime CalcPro result";
   }
   function resultText() {
     const panel = document.querySelector(".calc-content:not(.hidden) .result-box");
-    return panel ? `${activeToolName()}\n\n${panel.innerText.trim()}\n\nCalculated with CalcPro.` : "CalcPro result";
+    return panel ? `${activeToolName()}\n\n${panel.innerText.trim()}\n\nCalculated with Prime CalcPro.` : "Prime CalcPro result";
   }
   if ($("shareResult")) {
     $("shareResult").addEventListener("click", async () => {
